@@ -1,0 +1,684 @@
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Itsukis Chat Hub Launcher</title><style>html,body{margin:0;height:100%}body{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:13px;padding:24px;text-align:center;background:radial-gradient(900px 520px at 50% -10%,rgba(255,255,255,.045),transparent 62%),#0c0c0c;color:#999;font:500 13px Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.r{width:30px;height:30px;border-radius:50%;border:3px solid #242424;border-top-color:#e6e6e6;animation:s .7s linear infinite}@keyframes s{to{transform:rotate(360deg)}}b{font-size:15.5px;font-weight:600;letter-spacing:-.024em;color:#ededed}p{margin:0;max-width:36ch;line-height:1.6;color:#999}.bar{position:relative;width:min(300px,78vw);height:3px;border-radius:3px;background:#242424;overflow:hidden}.bar i{position:absolute;top:0;bottom:0;left:0;width:38%;border-radius:3px;background:linear-gradient(90deg,#8f8f8f,#e6e6e6);animation:w 1.25s cubic-bezier(.22,.78,.26,1) infinite}@keyframes w{0%{transform:translateX(-110%)}100%{transform:translateX(330%)}}.slow{font-size:12px;color:#5a5a5a;max-width:34ch;opacity:0;animation:f .5s ease 6s forwards}@keyframes f{to{opacity:1}}@media(prefers-reduced-motion:reduce){.r,.bar i{animation:none}.slow{animation:none;opacity:1}}#app{position:fixed;inset:0;width:100%;height:100%;border:0;background:#0c0c0c;opacity:0;transition:opacity .3s ease}#app.in{opacity:1}</style><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2232%22%20fill%3D%22%2309090e%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M21%2015h22a9%209%200%200%201%209%209v12a9%209%200%200%201-9%209H31.6l-8.2%206.4A1.6%201.6%200%200%201%2020.8%2050v-5.4A9%209%200%200%201%2012%2035.6V24a9%209%200%200%201%209-9Z%22%2F%3E%3Ccircle%20cx%3D%2225.5%22%20cy%3D%2230%22%20r%3D%224.2%22%20fill%3D%22%2309090e%22%2F%3E%3Ccircle%20cx%3D%2238.5%22%20cy%3D%2230%22%20r%3D%224.2%22%20fill%3D%22%2309090e%22%2F%3E%3C%2Fsvg%3E"></head><body><div class="r"></div><b id="m">Preparing 1v1.ARENA…</b><p>Most apps take around 6 seconds to start. Please don’t close this tab.</p><div class="bar"><i></i></div><p class="slow">Still loading? Some apps take a little longer. Please keep waiting.</p><iframe id="app" title="1v1.ARENA" allow="fullscreen; clipboard-read; clipboard-write; autoplay; microphone; camera; geolocation; encrypted-media; picture-in-picture" allowfullscreen="" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;&lt;script&gt;(function(){try{if(window.__rlCam)return;window.__rlCam=1;
+var MP=MouseEvent.prototype,dx=Object.getOwnPropertyDescriptor(MP,'movementX'),dy=Object.getOwnPropertyDescriptor(MP,'movementY');
+if(!dx||!dx.get||!dy||!dy.get)return;
+var pn=function(){return window.performance&amp;&amp;performance.now?performance.now():Date.now()},quiet=0,skip=0,V=new WeakMap(),SPIKE=450;
+function arm(ms,n){quiet=Math.max(quiet,pn()+ms);skip=Math.max(skip,n)}
+['pointerlockchange','visibilitychange','fullscreenchange'].forEach(function(t){document.addEventListener(t,function(){arm(t==='pointerlockchange'?240:140,3)},true)});
+['focus','blur','pageshow'].forEach(function(t){addEventListener(t,function(){arm(140,2)},true)});
+arm(700,3);
+function bad(e){var v=V.get(e);if(v!==undefined)return v;v=false;
+ if(e.isTrusted){var t=e.type,mv=(t==='mousemove'||t==='pointermove'||t==='pointerrawupdate');
+  if(pn()&lt;quiet)v=true;
+  else if(mv&amp;&amp;skip&gt;0){skip--;v=true}
+  else if(document.pointerLockElement){var x=dx.get.call(e),y=dy.get.call(e);if(Math.abs(x)&gt;SPIKE||Math.abs(y)&gt;SPIKE)v=true}}
+ V.set(e,v);return v}
+Object.defineProperty(MP,'movementX',{configurable:true,enumerable:true,get:function(){var v=dx.get.call(this);return bad(this)?0:v}});
+Object.defineProperty(MP,'movementY',{configurable:true,enumerable:true,get:function(){var v=dy.get.call(this);return bad(this)?0:v}});
+}catch(_){}})();&lt;/script&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0b0b0d&quot;&gt;
+&lt;title&gt;1v1.ARENA&lt;/title&gt;
+&lt;style id=&quot;launcherStyles&quot;&gt;
+:root{color-scheme:dark;--bg:#0b0b0d;--panel:#171619;--text:#f4f1f7;--muted:#a5a1ad;--line:#403e47;--accent:#f5b942;--good:#83e6b1;--bad:#ff8b9a}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,&quot;Segoe UI&quot;,sans-serif}
+#loading{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;overflow:auto;padding:clamp(14px,3vw,34px);background:radial-gradient(ellipse at 18% 12%,#67451b55 0,transparent 32%),radial-gradient(ellipse at 84% 76%,#8b5b1d30 0,transparent 32%),linear-gradient(135deg,#17130d 0%,#0c0c0f 48%,#17120b 100%);opacity:1;visibility:visible;transition:opacity .28s ease,visibility 0s}
+#loading:before{content:&quot;&quot;;position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.16;background-image:linear-gradient(#c08a3517 1px,transparent 1px),linear-gradient(90deg,#c08a3517 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+#loading:after{content:&quot;&quot;;position:fixed;width:min(56vw,560px);aspect-ratio:1;border:1px solid #d6a54b18;border-radius:50%;top:-34%;right:-12%;z-index:-1;box-shadow:0 0 0 38px #d6a54b08,0 0 0 80px #d6a54b06;animation:orbitGlow 9s ease-in-out infinite alternate;pointer-events:none}
+#loading.hidden{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility 0s linear .28s}
+.panel{position:relative;width:min(700px,100%);max-height:calc(100dvh - 32px);overflow:auto;padding:clamp(22px,4.5vw,38px);border:1px solid #80612f80;border-radius:26px;background:linear-gradient(145deg,#242016f5 0%,#171619f8 58%,#121113f8 100%);box-shadow:0 32px 110px #000b,inset 0 1px #fff1;backdrop-filter:blur(22px)}
+.panel:before{content:&quot;LIVE REPOSITORY · DIRECT PAGE LAUNCH&quot;;display:inline-flex;align-items:center;gap:8px;margin-bottom:19px;padding:6px 10px;border:1px solid #7356288a;border-radius:999px;background:#3a2b164d;color:#e6c98c;font-size:9px;font-weight:850;letter-spacing:.16em}
+.panel:after{content:&quot;&quot;;position:absolute;left:0;right:0;top:0;height:2px;border-radius:26px 26px 0 0;background:linear-gradient(90deg,transparent,#f5b942,#fff0bc,#c17d23,transparent);opacity:.85}
+.brand{display:flex;align-items:center;gap:16px;margin-bottom:8px}.logo{width:62px;height:62px;display:grid;place-items:center;flex:0 0 auto;border-radius:19px;font-size:32px;background:linear-gradient(145deg,#79501d,#332416);border:1px solid #b17b2c;box-shadow:inset 0 1px #ffffff24,0 8px 26px #0005}
+h1{font-size:clamp(28px,5vw,38px);letter-spacing:-.055em;line-height:1.12;margin:0}.tag{display:flex;align-items:center;gap:7px;color:#d8bb7c;font-size:11px;font-weight:750;letter-spacing:.045em;margin-top:6px}.tag:before{content:&quot;&quot;;width:6px;height:6px;border-radius:50%;background:#f6b83f;box-shadow:0 0 10px #f6b83f}
+.intro{max-width:580px;margin:14px 0 23px;color:#b8b4bd;font-size:14px;line-height:1.75}.status{padding:clamp(14px,3vw,20px);border:1px solid #454047;border-radius:19px;background:linear-gradient(145deg,#111114ed,#19181bed);box-shadow:inset 0 1px #fff08,0 12px 34px #0002}
+.status-title{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:800;letter-spacing:-.015em}.dot{width:9px;height:9px;flex:0 0 auto;border-radius:50%;background:#ffc04d;box-shadow:0 0 16px #ffc04d99;animation:pulse 1.4s ease-in-out infinite}.status-text{font-size:12px;line-height:1.65;color:#aaa6b0;min-height:20px;margin-top:5px;overflow-wrap:anywhere}
+.file-meter{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:16px;padding:13px 14px;border:1px solid #5b492c;border-radius:13px;background:linear-gradient(100deg,#201a11,#191715);box-shadow:inset 0 1px #fff08}.file-current{display:flex;flex-direction:column;gap:2px;min-width:0}.file-caption{color:#b8a078;font-size:9px;font-weight:850;letter-spacing:.17em}.file-name{max-width:min(390px,52vw);font-size:13px;font-weight:750;color:#fff1d1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.file-metrics{display:flex;align-items:baseline;gap:10px;flex-shrink:0;font-variant-numeric:tabular-nums}.file-step{font-size:12px;font-weight:750;color:#d8c59e}.file-percent{min-width:42px;font-size:21px;font-weight:850;letter-spacing:-.04em;color:#ffca62;text-align:right}
+.bar{height:7px;margin-top:10px;border-radius:99px;background:#383026;overflow:hidden}.bar span{position:relative;display:block;height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#a66a1d,#ffc34f,#ffe3a1);box-shadow:0 0 14px #f5b94240;transition:width .2s ease}.bar span:after{content:&quot;&quot;;display:block;height:100%;width:32%;margin-left:auto;background:linear-gradient(90deg,transparent,#fff8,transparent);animation:barShine 1.6s linear infinite}
+.load-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:17px 3px 9px;color:#a59b8a;font-size:9px;font-weight:850;letter-spacing:.16em}.load-head span:last-child{letter-spacing:0;font-variant-numeric:tabular-nums;color:#e6d2a9}.asset-list{display:grid;gap:6px;max-height:184px;overflow:auto;padding:2px 3px 2px 1px;scrollbar-width:thin;scrollbar-color:#56472f transparent}.asset-row{display:grid;grid-template-columns:19px minmax(0,1fr) auto;align-items:center;gap:9px;min-height:32px;padding:7px 10px;border:1px solid #ffffff08;border-radius:10px;background:#0c0c0fb8;color:#9a9aa3;font-size:11px;transition:background .15s,border-color .15s,color .15s}.asset-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.asset-state{font-size:10px;color:#777781;white-space:nowrap}.asset-icon{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;font-size:12px}.asset-row.active{border-color:#b88434;background:linear-gradient(100deg,#3a2b16,#211b13);box-shadow:0 0 0 1px #dca54112;color:#fff5df}.asset-row.active .asset-icon{animation:pulse 1s ease-in-out infinite;color:#ffca68}.asset-row.active .asset-state{color:#ffca68}.asset-row.done{border-color:#244a37;background:#102219aa}.asset-row.done .asset-icon{background:#153c2c;color:var(--good)}.asset-row.done .asset-state{color:var(--good)}.asset-row.failed{border-color:#70303e;background:#351922;color:#ffdae0}.asset-row.failed .asset-icon,.asset-row.failed .asset-state{color:var(--bad)}
+.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px}.loader-button{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 16px;border:1px solid transparent;border-radius:12px;background:linear-gradient(135deg,#ffd47b,#e9a932);color:#211706;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px #0003;transition:filter .15s,transform .15s}.loader-button.secondary{background:#302d32;border-color:#4a454e;color:#f1eef5}.loader-button:hover{filter:brightness(1.08);transform:translateY(-1px)}.loader-button:disabled{opacity:.55;cursor:wait;transform:none}.hint{margin:17px 0 0;max-width:590px;font-size:11px;line-height:1.7;color:#89858f}.hint a{color:#e5c681;text-decoration:none}.error{color:#ffc0c7;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:12px;border:1px solid #70303e;border-radius:10px;background:#35192280;padding:10px}.error[hidden]{display:none}
+#launcherNotice{position:fixed;right:13px;bottom:13px;z-index:2147483001;max-width:min(390px,calc(100vw - 26px));padding:10px 13px;border:1px solid #554832;border-radius:11px;background:#17140fee;color:#f4e6cb;box-shadow:0 8px 28px #0006;font-size:12px;opacity:0;transform:translateY(7px);pointer-events:none;transition:opacity .2s,transform .2s}#launcherNotice.show{opacity:1;transform:translateY(0)}
+@keyframes pulse{0%,100%{opacity:.48;transform:scale(.85)}50%{opacity:1;transform:scale(1.08)}}@keyframes barShine{from{transform:translateX(-110%)}to{transform:translateX(110%)}}@keyframes orbitGlow{from{transform:translate3d(0,0,0) rotate(0deg);opacity:.65}to{transform:translate3d(-24px,22px,0) rotate(14deg);opacity:1}}
+@media(max-width:520px){.panel{border-radius:21px}.panel:before{margin-bottom:15px}.brand{gap:12px}.logo{width:52px;height:52px;font-size:27px;border-radius:16px}.file-name{max-width:54vw}.asset-list{max-height:145px}.intro{font-size:13px}.file-meter{align-items:center}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}#loading:after,.bar span:after{animation:none!important}}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;loading&quot;&gt;
+  &lt;section class=&quot;panel&quot; aria-labelledby=&quot;loaderTitle&quot;&gt;
+    &lt;div class=&quot;brand&quot;&gt;&lt;div class=&quot;logo&quot; aria-hidden=&quot;true&quot;&gt;⚡&lt;/div&gt;&lt;div&gt;&lt;h1 id=&quot;loaderTitle&quot;&gt;1v1.ARENA&lt;/h1&gt;&lt;div class=&quot;tag&quot;&gt;RECURSIVE FILE SYNC · SAME-TAB LAUNCH&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;p class=&quot;intro&quot;&gt;Scanning the live GitHub repository, fetching every tracked file, then starting the real page in this tab. The game is not embedded in a frame, and the raw HTML URL is never used as the page itself.&lt;/p&gt;
+    &lt;div class=&quot;status&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;
+      &lt;div class=&quot;status-title&quot;&gt;&lt;span class=&quot;dot&quot; id=&quot;statusDot&quot;&gt;&lt;/span&gt;&lt;span id=&quot;statusTitle&quot;&gt;Connecting to GitHub…&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;status-text&quot; id=&quot;statusText&quot;&gt;Discovering the latest repository tree and checking the entry page.&lt;/div&gt;
+      &lt;div class=&quot;file-meter&quot;&gt;&lt;div class=&quot;file-current&quot;&gt;&lt;span class=&quot;file-caption&quot;&gt;CURRENT FILE / STAGE&lt;/span&gt;&lt;span class=&quot;file-name&quot; id=&quot;currentFile&quot;&gt;Repository tree&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;file-metrics&quot;&gt;&lt;span class=&quot;file-step&quot; id=&quot;fileStep&quot;&gt;0/0&lt;/span&gt;&lt;span class=&quot;file-percent&quot; id=&quot;filePercent&quot;&gt;0%&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;bar&quot; role=&quot;progressbar&quot; aria-label=&quot;Repository file download progress&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; aria-valuenow=&quot;0&quot;&gt;&lt;span id=&quot;progress&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;load-head&quot;&gt;&lt;span&gt;REPOSITORY FILES&lt;/span&gt;&lt;span id=&quot;assetCount&quot;&gt;Finding files…&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;asset-list&quot; id=&quot;assetList&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;error&quot; id=&quot;error&quot; hidden&gt;&lt;/div&gt;
+    &lt;div class=&quot;actions&quot;&gt;&lt;button class=&quot;loader-button&quot; id=&quot;retry&quot; type=&quot;button&quot;&gt;↻ Retry loading&lt;/button&gt;&lt;button class=&quot;loader-button secondary&quot; id=&quot;force&quot; type=&quot;button&quot; title=&quot;Skips the GitHub API and loads through the jsDelivr CDN&quot;&gt;⚡ Force load (rate limited)&lt;/button&gt;&lt;a class=&quot;loader-button secondary&quot; href=&quot;https://github.com/AniItsukiCoded/1v1-lol-remake&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Open source repository ↗&lt;/a&gt;&lt;/div&gt;
+    &lt;p class=&quot;hint&quot;&gt;Source: &lt;a href=&quot;https://raw.githubusercontent.com/AniItsukiCoded/1v1-lol-remake/refs/heads/main/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;raw index.html&lt;/a&gt; · All files are fetched from the repo tree with CDN fallback. Firebase authentication and matchmaking still depend on the repository’s Firebase project settings and the domain hosting this launcher.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+&lt;div id=&quot;launcherNotice&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+(() =&gt; {
+  'use strict';
+
+  const OWNER = 'AniItsukiCoded';
+  const REPO = '1v1-lol-remake';
+  const BRANCH = 'main';
+  const API_ROOT = `https://api.github.com/repos/${OWNER}/${REPO}`;
+  const RAW_ROOT = `https://raw.githubusercontent.com/${OWNER}/${REPO}/`;
+  const $ = id =&gt; document.getElementById(id);
+  const fileCache = new Map();
+  const rowMap = new Map();
+  const blobUrls = new Map();
+  let repoVersion = BRANCH;
+  let loadedCommitSha = '';
+  let queue = [];
+  let busy = false;
+  let checkingForUpdates = false;
+  let updateAvailableSha = '';
+  let currentExecuting = '';
+  let lastInjectedError = null;
+  let noticeTimer = 0;
+
+  window.addEventListener('error', event =&gt; {
+    if (currentExecuting) {
+      lastInjectedError = new Error(`${currentExecuting}: ${event.message || 'JavaScript execution error'}`);
+    }
+  }, true);
+
+  function encodePath(path) {
+    return String(path).split('/').map(part =&gt; encodeURIComponent(part)).join('/');
+  }
+  function cleanPath(path) {
+    const parts = [];
+    for (const part of String(path || '').replace(/\\/g, '/').split('/')) {
+      if (!part || part === '.') continue;
+      if (part === '..') { if (parts.length) parts.pop(); continue; }
+      parts.push(part);
+    }
+    return parts.join('/');
+  }
+  function cdnRoot() { return `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${repoVersion}/`; }
+  function cdnUrl(path) { return cdnRoot() + encodePath(cleanPath(path)); }
+  function rawUrl(path) { return RAW_ROOT + `${encodeURIComponent(repoVersion)}/` + encodePath(path); }
+
+  async function fetchResponse(url, timeoutMs = 18000) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() =&gt; controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(url, {
+        cache: 'no-store',
+        signal: controller.signal,
+        headers: { 'Accept': 'application/vnd.github+json, text/plain, */*;q=0.8' }
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status} — ${url}`);
+      return response;
+    } finally { clearTimeout(timeout); }
+  }
+  async function fetchJson(url) {
+    const response = await fetchResponse(url, 12000);
+    return response.json();
+  }
+
+  const TREE_CACHE_KEY = `repoTree:${OWNER}/${REPO}`;
+  let forceMode = /[?&amp;]force(?:=1|=true|&amp;|$)/i.test(location.search);
+  let updateChecksDisabled = false;
+
+  function saveTreeCache(paths) {
+    try { localStorage.setItem(TREE_CACHE_KEY, JSON.stringify({ time: Date.now(), paths })); } catch (_) {}
+  }
+  function loadTreeCache() {
+    try {
+      const data = JSON.parse(localStorage.getItem(TREE_CACHE_KEY) || 'null');
+      if (data &amp;&amp; Array.isArray(data.paths) &amp;&amp; data.paths.includes('index.html')) return data.paths;
+    } catch (_) {}
+    return null;
+  }
+
+  // File listing that does NOT use api.github.com, so GitHub API rate limits
+  // (60 requests/hour per IP when unauthenticated) cannot block it.
+  async function discoverTreeViaCdn() {
+    const response = await fetchResponse(`https://data.jsdelivr.com/v1/packages/gh/${OWNER}/${REPO}@${BRANCH}?structure=flat`, 15000);
+    const data = await response.json();
+    if (!data || !Array.isArray(data.files) || !data.files.length) throw new Error('jsDelivr returned no file list.');
+    return data.files.map(file =&gt; String(file.name || '').replace(/^\/+/, '')).filter(Boolean);
+  }
+
+  async function discoverTreeWithoutApi(reason) {
+    repoVersion = BRANCH;
+    loadedCommitSha = '';
+    updateChecksDisabled = true;
+    try {
+      const paths = await discoverTreeViaCdn();
+      saveTreeCache(paths);
+      return paths;
+    } catch (cdnError) {
+      const cached = loadTreeCache();
+      if (cached) return cached;
+      throw new Error(`Could not discover repository files without the GitHub API. ${reason ? reason + ' ' : ''}jsDelivr listing: ${cdnError?.message || cdnError}`);
+    }
+  }
+
+  async function discoverTree() {
+    if (forceMode) {
+      // Force load: skip api.github.com entirely.
+      return discoverTreeWithoutApi('');
+    }
+    let discoveryError = null;
+    // Pin the file tree and raw downloads to one commit so a push midway through
+    // launch cannot mix unrelated versions of index.html, CSS, and JavaScript.
+    try {
+      const commit = await fetchJson(`${API_ROOT}/commits/${BRANCH}`);
+      if (!commit.sha) throw new Error('The commit response did not include a SHA.');
+      const tree = await fetchJson(`${API_ROOT}/git/trees/${commit.sha}?recursive=1`);
+      if (tree.truncated) throw new Error('GitHub truncated the recursive file tree.');
+      if (!Array.isArray(tree.tree)) throw new Error('GitHub did not return a repository file tree.');
+      repoVersion = commit.sha;
+      loadedCommitSha = commit.sha;
+      const paths = tree.tree.filter(item =&gt; item.type === 'blob' &amp;&amp; item.path).map(item =&gt; item.path);
+      saveTreeCache(paths);
+      return paths;
+    } catch (error) { discoveryError = error; }
+
+    // If the commit endpoint is temporarily unavailable, try the public tree
+    // endpoint by branch. Never silently claim a partial list is the full repo.
+    try {
+      const tree = await fetchJson(`${API_ROOT}/git/trees/${BRANCH}?recursive=1`);
+      if (tree.truncated || !Array.isArray(tree.tree)) throw new Error('GitHub returned an incomplete file tree.');
+      repoVersion = BRANCH;
+      const paths = tree.tree.filter(item =&gt; item.type === 'blob' &amp;&amp; item.path).map(item =&gt; item.path);
+      saveTreeCache(paths);
+      return paths;
+    } catch (error) {
+      // GitHub API unavailable or rate limited: fall back automatically.
+      note('GitHub API unavailable — using CDN file listing instead.', 4000);
+      return discoverTreeWithoutApi(`Commit/tree request: ${discoveryError?.message || discoveryError}. Branch-tree fallback: ${error?.message || error}.`);
+    }
+  }
+
+  function createQueue(paths) {
+    queue = paths.slice();
+    rowMap.clear();
+    $('assetList').replaceChildren();
+    for (const path of queue) {
+      const row = document.createElement('div');
+      row.className = 'asset-row';
+      row.dataset.path = path;
+      row.dataset.loaded = 'false';
+      const icon = document.createElement('span'); icon.className = 'asset-icon'; icon.textContent = '○';
+      const name = document.createElement('span'); name.className = 'asset-name'; name.textContent = path; name.title = path;
+      const state = document.createElement('span'); state.className = 'asset-state'; state.textContent = 'Queued';
+      row.append(icon, name, state);
+      $('assetList').appendChild(row);
+      rowMap.set(path, row);
+    }
+    updateMeter();
+  }
+
+  function setFileState(path, state, detail) {
+    const row = rowMap.get(path);
+    if (!row) return;
+    row.classList.remove('active', 'done', 'failed');
+    if (state === 'active') row.classList.add('active');
+    if (state === 'done') row.classList.add('done');
+    if (state === 'failed') row.classList.add('failed');
+    row.querySelector('.asset-icon').textContent = state === 'done' ? '✓' : state === 'failed' ? '!' : state === 'active' ? '◌' : '○';
+    row.querySelector('.asset-state').textContent = detail || (state === 'done' ? 'Loaded' : state === 'failed' ? 'Failed' : state === 'active' ? 'Loading' : 'Queued');
+    updateMeter();
+  }
+
+  function updateMeter() {
+    const rows = queue.map(path =&gt; rowMap.get(path)).filter(Boolean);
+    if (!rows.length) {
+      $('fileStep').textContent = '0/0'; $('filePercent').textContent = '0%';
+      $('progress').style.width = '0%'; $('progress').parentElement.setAttribute('aria-valuenow', '0');
+      $('assetCount').textContent = 'Finding files…';
+      return;
+    }
+    const loaded = rows.filter(row =&gt; row.dataset.loaded === 'true').length;
+    const failed = rows.filter(row =&gt; row.classList.contains('failed')).length;
+    const current = rows.find(row =&gt; row.classList.contains('active') &amp;&amp; row.dataset.loaded !== 'true') || rows.find(row =&gt; row.dataset.loaded !== 'true' &amp;&amp; !row.classList.contains('failed')) || rows.find(row =&gt; row.classList.contains('active')) || rows[rows.length - 1];
+    const percent = Math.round(loaded / rows.length * 100);
+    $('currentFile').textContent = current.dataset.path;
+    $('currentFile').title = current.dataset.path;
+    $('fileStep').textContent = `${loaded}/${rows.length}`;
+    $('filePercent').textContent = `${percent}%`;
+    $('progress').style.width = `${percent}%`;
+    $('progress').parentElement.setAttribute('aria-valuenow', String(percent));
+    $('assetCount').textContent = `${loaded}/${rows.length} files fetched${failed ? ` · ${failed} failed` : ''}`;
+    const active = $('assetList').querySelector('.asset-row.active');
+    if (active) active.scrollIntoView({ block: 'nearest' });
+  }
+
+  function setPhase(title, message, fileLabel) {
+    $('statusTitle').textContent = title;
+    $('statusText').textContent = message;
+    if (fileLabel) $('currentFile').textContent = fileLabel;
+    $('statusDot').style.background = 'var(--accent)';
+    $('statusDot').style.boxShadow = '0 0 14px #f5a623aa';
+  }
+  function showError(message) {
+    $('error').hidden = false;
+    $('error').textContent = message;
+    $('statusTitle').textContent = 'The site could not finish loading';
+    $('statusDot').style.background = 'var(--bad)';
+    $('statusDot').style.boxShadow = '0 0 14px #ff8b9a99';
+  }
+  function clearError() { $('error').hidden = true; $('error').textContent = ''; }
+  function note(message, duration = 3000) {
+    $('launcherNotice').textContent = message;
+    $('launcherNotice').classList.add('show');
+    clearTimeout(noticeTimer);
+    noticeTimer = setTimeout(() =&gt; $('launcherNotice').classList.remove('show'), duration);
+  }
+
+  function mimeForPath(path) {
+    const ext = path.toLowerCase().split('.').pop();
+    return ({
+      html:'text/html;charset=utf-8', htm:'text/html;charset=utf-8', css:'text/css;charset=utf-8',
+      js:'text/javascript;charset=utf-8', mjs:'text/javascript;charset=utf-8', json:'application/json;charset=utf-8',
+      txt:'text/plain;charset=utf-8', md:'text/markdown;charset=utf-8', svg:'image/svg+xml', png:'image/png', jpg:'image/jpeg', jpeg:'image/jpeg',
+      webp:'image/webp', gif:'image/gif', ico:'image/x-icon', mp3:'audio/mpeg', ogg:'audio/ogg', wav:'audio/wav', mp4:'video/mp4',
+      webm:'video/webm', woff:'font/woff', woff2:'font/woff2', ttf:'font/ttf', otf:'font/otf', wasm:'application/wasm', xml:'application/xml;charset=utf-8',
+      yml:'text/yaml;charset=utf-8', yaml:'text/yaml;charset=utf-8', webmanifest:'application/manifest+json;charset=utf-8'
+    })[ext] || 'application/octet-stream';
+  }
+  function isTextPath(path) {
+    return /\.(?:html?|xhtml|css|js|mjs|cjs|json|md|txt|xml|ya?ml|svg|webmanifest|toml|ini|csv|tsv|map|glsl|vert|frag|properties|sql|sh|py|java|c|h|cpp|hpp|rs|go|php|rb)$/i.test(path);
+  }
+
+  async function fetchRepoFile(path) {
+    const encoded = encodePath(path);
+    const rawA = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${repoVersion}/${encoded}`;
+    const rawB = `https://raw.githubusercontent.com/${OWNER}/${REPO}/refs/heads/${BRANCH}/${encoded}`;
+    const cdnA = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${encodeURIComponent(repoVersion)}/${encoded}`;
+    const cdnB = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/${encoded}`;
+    // In force mode, try the CDN first so a rate-limited raw.githubusercontent.com is not hit.
+    const urls = forceMode ? [cdnA, cdnB, rawA, rawB] : [rawA, rawB, cdnA, cdnB];
+    const errors = [];
+    for (const url of urls) {
+      try {
+        const response = await fetchResponse(url, 20000);
+        const bytes = await response.arrayBuffer();
+        // An empty source file is valid; warn instead of aborting the whole launch.
+        const empty = !bytes.byteLength;
+        if (empty &amp;&amp; path !== 'README.md') console.warn(`[launcher] ${path} is empty in the repository (0 bytes). Re-upload it with content if the game needs it.`);
+        const text = isTextPath(path) ? new TextDecoder('utf-8', {fatal:false}).decode(bytes) : null;
+        return { bytes, text, sourceUrl:url, mime:mimeForPath(path), empty };
+      } catch (error) { errors.push(error?.message || String(error)); }
+    }
+    throw new Error(`Unable to fetch ${path}. ${errors.slice(0,4).join(' | ')}`);
+  }
+
+  async function downloadEveryFile(paths) {
+    fileCache.clear();
+    let next = 0;
+    const failures = [];
+    const worker = async () =&gt; {
+      while (true) {
+        const index = next++;
+        if (index &gt;= paths.length) return;
+        const path = paths[index];
+        setFileState(path, 'active', 'Downloading');
+        try {
+          const record = await fetchRepoFile(path);
+          fileCache.set(path, record);
+          if (record.empty &amp;&amp; path !== 'README.md') note(`${path} is empty in the repo (0 bytes)`, 6000);
+          const row = rowMap.get(path);
+          if (row) row.dataset.loaded = 'true';
+          setFileState(path, 'done', 'Fetched');
+        } catch (error) {
+          failures.push({path,error});
+          setFileState(path, 'failed', 'Failed');
+        }
+      }
+    };
+    await Promise.all(Array.from({length:Math.min(6, paths.length)}, worker));
+    if (failures.length) {
+      const summary = failures.map(item =&gt; `• ${item.path}: ${item.error?.message || item.error}`).join('\n');
+      throw new Error(`${failures.length} repository file(s) could not be downloaded. The launcher stopped instead of starting with missing assets.\n\n${summary}`);
+    }
+  }
+
+  function resolveLocalPath(reference, basePath = 'index.html') {
+    const ref = String(reference || '').trim();
+    if (!ref || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#|data:|blob:|javascript:|mailto:|tel:)/i.test(ref)) return null;
+    try {
+      const base = `https://repo-path.invalid/${encodePath(cleanPath(basePath))}`;
+      const url = new URL(ref, base);
+      if (url.origin !== 'https://repo-path.invalid') return null;
+      let decoded;
+      try { decoded = decodeURIComponent(url.pathname); } catch (_) { decoded = url.pathname; }
+      return cleanPath(decoded.replace(/^\/+/, '')) || 'index.html';
+    } catch (_) { return null; }
+  }
+
+  function clearBlobUrls() {
+    for (const url of blobUrls.values()) URL.revokeObjectURL(url);
+    blobUrls.clear();
+  }
+  function createBlobUrls() {
+    clearBlobUrls();
+    for (const [path, file] of fileCache) {
+      const blob = new Blob([file.bytes], {type:file.mime || mimeForPath(path)});
+      blobUrls.set(path, URL.createObjectURL(blob));
+    }
+  }
+  function isExternalReference(value) {
+    return /^(?:[a-z][a-z0-9+.-]*:|\/\/|#|data:|blob:|var\()/i.test(String(value || '').trim());
+  }
+  function resolveAssetUrl(reference, fromPath) {
+    const ref = String(reference || '').trim();
+    if (!ref || isExternalReference(ref)) return ref;
+    const localPath = resolveLocalPath(ref, fromPath);
+    if (!localPath) return ref;
+    return blobUrls.get(localPath) || cdnUrl(localPath);
+  }
+
+  function rewriteCss(css, cssPath) {
+    let result = String(css || '');
+    result = result.replace(/url\(\s*([&quot;']?)([^&quot;')]+)\1\s*\)/gi, (all, quote, ref) =&gt; {
+      const value = String(ref).trim();
+      if (!value || isExternalReference(value)) return all;
+      return `url(&quot;${resolveAssetUrl(value, cssPath).replace(/&quot;/g, '%22')}&quot;)`;
+    });
+    result = result.replace(/(@import\s+)([&quot;'])([^&quot;']+)\2/gi, (all, lead, quote, ref) =&gt; {
+      if (isExternalReference(ref)) return all;
+      return `${lead}${quote}${resolveAssetUrl(ref, cssPath)}${quote}`;
+    });
+    return result.replace(/&lt;\/style/gi, '&lt;\\/style');
+  }
+
+  function rewriteDocumentReferences(doc, pagePath) {
+    for (const element of doc.querySelectorAll('[src],[href],[poster],[data]')) {
+      for (const attr of ['src','href','poster','data']) {
+        if (!element.hasAttribute(attr)) continue;
+        const value = element.getAttribute(attr).trim();
+        if (!value || isExternalReference(value)) continue;
+        const path = resolveLocalPath(value, pagePath);
+        if (path) element.setAttribute(attr, blobUrls.get(path) || cdnUrl(path));
+      }
+    }
+  }
+
+  function makeScriptPlan(doc, pagePath) {
+    return [...doc.querySelectorAll('script')].map(node =&gt; {
+      const attrs = [...node.attributes].reduce((out, attr) =&gt; { out[attr.name] = attr.value; return out; }, {});
+      const src = node.getAttribute('src');
+      if (!src) return {path: `${pagePath} (inline script)`, code: node.textContent || '', attrs};
+      const localPath = resolveLocalPath(src, pagePath);
+      if (localPath &amp;&amp; fileCache.has(localPath)) {
+        const record = fileCache.get(localPath);
+        if (record.text === null) throw new Error(`Script ${localPath} is not a text file.`);
+        return {path:localPath, code:record.text, attrs};
+      }
+      let externalUrl = src;
+      if (localPath) externalUrl = cdnUrl(localPath);
+      else {
+        try { externalUrl = new URL(src, cdnRoot()).href; } catch (_) {}
+      }
+      return {path: externalUrl, src:externalUrl, attrs};
+    });
+  }
+
+  async function loadExternalScript(plan) {
+    await new Promise((resolve, reject) =&gt; {
+      const script = document.createElement('script');
+      for (const [name, value] of Object.entries(plan.attrs || {})) {
+        if (['src','async','defer','integrity','crossorigin','referrerpolicy'].includes(name.toLowerCase())) continue;
+        script.setAttribute(name, value);
+      }
+      if (plan.attrs?.integrity) script.integrity = plan.attrs.integrity;
+      if (plan.attrs?.crossorigin) script.crossOrigin = plan.attrs.crossorigin;
+      if (plan.attrs?.referrerpolicy) script.referrerPolicy = plan.attrs.referrerpolicy;
+      script.async = false;
+      const timeout = setTimeout(() =&gt; {
+        script.remove();
+        reject(new Error(`Timed out loading external runtime: ${plan.src}`));
+      }, 25000);
+      script.onload = () =&gt; { clearTimeout(timeout); resolve(); };
+      script.onerror = () =&gt; { clearTimeout(timeout); reject(new Error(`External runtime failed to load: ${plan.src}`)); };
+      currentExecuting = plan.path;
+      lastInjectedError = null;
+      script.src = plan.src;
+      document.body.appendChild(script);
+    });
+    // Let a synchronous exception in the just-loaded dependency reach the global
+    // error handler before another script begins.
+    await new Promise(resolve =&gt; setTimeout(resolve, 0));
+    const error = lastInjectedError;
+    currentExecuting = '';
+    lastInjectedError = null;
+    if (error) throw error;
+  }
+
+  async function runInlineScript(plan) {
+    const script = document.createElement('script');
+    for (const [name, value] of Object.entries(plan.attrs || {})) {
+      if (['src','async','defer','integrity','crossorigin','referrerpolicy'].includes(name.toLowerCase())) continue;
+      script.setAttribute(name, value);
+    }
+    script.async = false;
+    script.dataset.launcherSource = plan.path;
+    currentExecuting = plan.path;
+    lastInjectedError = null;
+    script.textContent = `${plan.code}\n//# sourceURL=${RAW_ROOT}${encodeURIComponent(repoVersion)}/${encodePath(plan.path.split(' (inline script)')[0])}`.replace(/&lt;\/script/gi, '&lt;\\/script');
+    document.body.appendChild(script);
+    await new Promise(resolve =&gt; setTimeout(resolve, 0));
+    const error = lastInjectedError;
+    currentExecuting = '';
+    lastInjectedError = null;
+    if (error) throw error;
+  }
+
+  async function mountAndRun() {
+    const entry = fileCache.get('index.html');
+    if (!entry || entry.text === null) throw new Error('The repository does not include a readable index.html entry page.');
+
+    setPhase('Preparing the actual website…', 'Applying the repository stylesheet, mapping local assets, and staging the page in this tab.', 'index.html · preparing page');
+    const doc = new DOMParser().parseFromString(entry.text, 'text/html');
+    if (!doc.documentElement || !doc.head || !doc.body) throw new Error('index.html did not parse as a complete HTML document.');
+
+    const base = doc.createElement('base');
+    base.href = cdnRoot();
+    const priorBase = doc.querySelector('base');
+    if (priorBase) priorBase.replaceWith(base); else doc.head.prepend(base);
+
+    const scriptPlan = makeScriptPlan(doc, 'index.html');
+
+    for (const link of [...doc.querySelectorAll('link[rel~=&quot;stylesheet&quot;][href]')]) {
+      const href = link.getAttribute('href');
+      const localPath = resolveLocalPath(href, 'index.html');
+      if (localPath &amp;&amp; fileCache.has(localPath)) {
+        const style = doc.createElement('style');
+        style.dataset.repositoryFile = localPath;
+        const record = fileCache.get(localPath);
+        if (record.text === null) throw new Error(`Stylesheet ${localPath} is not a text file.`);
+        style.textContent = rewriteCss(record.text, localPath);
+        link.replaceWith(style);
+      } else if (localPath) {
+        link.href = cdnUrl(localPath);
+      }
+    }
+
+    rewriteDocumentReferences(doc, 'index.html');
+    // Remove parsed script nodes before importing the site's actual body. They
+    // are re-created one-by-one below so scripts run in the original order.
+    doc.querySelectorAll('script').forEach(node =&gt; node.remove());
+
+    const loader = $('loading');
+    const notice = $('launcherNotice');
+    const loaderStyle = $('launcherStyles');
+    const newHeadNodes = [...doc.head.childNodes].map(node =&gt; document.importNode(node, true));
+    document.head.replaceChildren(...newHeadNodes, loaderStyle);
+    document.documentElement.lang = doc.documentElement.lang || 'en';
+    document.title = doc.title || '1v1.ARENA';
+
+    const appNodes = [...doc.body.childNodes].map(node =&gt; document.importNode(node, true));
+    document.body.replaceChildren(...appNodes, loader, notice);
+
+    // Local assets are now blob-backed from the content downloaded above. A base
+    // URL also makes dynamically assigned relative paths resolve to the repo CDN.
+    setPhase('Starting runtime libraries…', 'All tracked repository files are fetched. Loading the external Three.js and Firebase libraries before starting the game.', 'External runtime libraries');
+    let libraryCount = 0;
+    for (const plan of scriptPlan) {
+      if (plan.src) {
+        const label = plan.src.split('/').pop().split('?')[0] || plan.src;
+        setPhase('Starting runtime libraries…', `Loading external dependency ${++libraryCount}. This is separate from the ${fileCache.size} repository files already fetched.`, label);
+        await loadExternalScript(plan);
+      } else {
+        setPhase('Starting the game…', `Executing ${plan.path} using the downloaded repository source.`, plan.path);
+        if (plan.path.includes('(inline script)') &amp;&amp; !plan.code.trim()) continue;
+        const localPath = plan.path.replace(/ \(inline script\)$/, '');
+        if (rowMap.has(localPath)) setFileState(localPath, 'active', 'Executing');
+        await runInlineScript(plan);
+        if (rowMap.has(localPath)) setFileState(localPath, 'done', 'Executed');
+      }
+    }
+
+    setPhase('Game page launched', 'The repository page and its local scripts are running directly in the current tab.', 'Launch complete');
+    $('fileStep').textContent = `${fileCache.size}/${fileCache.size}`;
+    $('filePercent').textContent = '100%';
+    $('progress').style.width = '100%';
+    $('progress').parentElement.setAttribute('aria-valuenow', '100');
+    $('assetCount').textContent = `${fileCache.size}/${fileCache.size} repository files fetched`;
+    await new Promise(resolve =&gt; setTimeout(resolve, 550));
+    loader.classList.add('hidden');
+    await new Promise(resolve =&gt; setTimeout(resolve, 320));
+    loader.remove();
+    notice.remove();
+    loaderStyle?.remove();
+  }
+
+  async function launch() {
+    if (busy) return;
+    busy = true;
+    $('retry').disabled = true; $('force').disabled = true;
+    clearError();
+    $('loading').classList.remove('hidden');
+    $('statusDot').style.background = 'var(--accent)';
+    $('statusDot').style.boxShadow = '0 0 14px #f5a623aa';
+    fileCache.clear();
+    try {
+      setPhase('Connecting to GitHub…', 'Checking the latest commit, then discovering every tracked file recursively.', 'Repository tree');
+      $('assetList').replaceChildren(); rowMap.clear(); queue = []; updateMeter();
+      const paths = await discoverTree();
+      if (!paths.includes('index.html')) throw new Error('The repository tree was discovered, but there is no root index.html to launch.');
+      // Put the entry page first in the visible list, while keeping every tracked
+      // blob in the list and in the download pass.
+      paths.sort((a,b) =&gt; a === 'index.html' ? -1 : b === 'index.html' ? 1 : a.localeCompare(b));
+      if (!paths.length) throw new Error('GitHub returned an empty repository tree.');
+      createQueue(paths);
+      setPhase(`Found ${paths.length} repository files`, `Pinned to ${repoVersion === BRANCH ? BRANCH : repoVersion.slice(0,7)}. Fetching every tracked file from raw GitHub with CDN fallback.`, 'Preparing download queue');
+      await downloadEveryFile(paths);
+      createBlobUrls();
+      setPhase('All repository files fetched', `Fetched ${fileCache.size} of ${paths.length} tracked files. Next, the launcher applies CSS and executes the actual index page in this tab.`, 'index.html · launch preparation');
+      await mountAndRun();
+    } catch (error) {
+      showError(`${error?.message || String(error)}\n\nNothing was embedded in a frame. Check the connection, repository access, or CDN restrictions, then retry. If Firebase reports an unauthorized domain, add the host website's domain in Firebase Authentication settings.`);
+      $('statusText').textContent = 'Launch stopped because a required repository file or runtime dependency could not be loaded.';
+      if (queue.length) {
+        for (const path of queue) {
+          const row = rowMap.get(path);
+          if (row &amp;&amp; row.dataset.loaded !== 'true' &amp;&amp; !row.classList.contains('failed')) {
+            setFileState(path, 'failed', 'Not loaded');
+          }
+        }
+      }
+      updateMeter();
+    } finally {
+      busy = false;
+      $('retry').disabled = false; $('force').disabled = false;
+    }
+  }
+
+  function showUpdateAvailable(latestSha) {
+    updateAvailableSha = latestSha;
+    let banner = document.getElementById('repoUpdateBanner');
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'repoUpdateBanner';
+      Object.assign(banner.style, {
+        position: 'fixed', right: '14px', bottom: '14px', zIndex: '2147483647',
+        display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '10px',
+        maxWidth: 'min(560px, calc(100vw - 28px))', padding: '12px 14px',
+        border: '1px solid #80612f', borderRadius: '13px',
+        background: 'rgba(22,20,20,.97)', color: '#fff1d1',
+        boxShadow: '0 12px 36px #000a', font: '13px/1.45 system-ui, sans-serif'
+      });
+      const message = document.createElement('span');
+      message.id = 'repoUpdateMessage';
+      message.textContent = 'A repository update is available.';
+      Object.assign(message.style, { flex: '1 1 190px' });
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = 'Update now ↻';
+      Object.assign(button.style, {
+        border: '0', borderRadius: '9px', padding: '9px 12px', cursor: 'pointer',
+        font: '700 12px system-ui, sans-serif', color: '#211706',
+        background: 'linear-gradient(135deg,#ffd47b,#e9a932)'
+      });
+      button.addEventListener('click', () =&gt; location.reload());
+      banner.append(message, button);
+    }
+    const message = document.getElementById('repoUpdateMessage');
+    if (message) message.textContent = `A new repository version (${latestSha.slice(0, 7)}) is available. Update after this match or click Update now.`;
+    if (!banner.isConnected) document.body.appendChild(banner);
+  }
+
+  async function checkForUpdates() {
+    // Without a known baseline commit (force/CDN mode) there is nothing to compare against,
+    // and checking would reload forever, so update checks stay off.
+    if (updateChecksDisabled || !loadedCommitSha) return;
+    if (busy || checkingForUpdates || document.visibilityState !== 'visible') return;
+    checkingForUpdates = true;
+    try {
+      const response = await fetch(`${API_ROOT}/commits/${BRANCH}`, { cache: 'no-store', headers: { 'Accept': 'application/vnd.github+json' } });
+      // Rate limited: stop polling for the rest of this session instead of burning more requests.
+      if (response.status === 403 || response.status === 429) { updateChecksDisabled = true; return; }
+      if (!response.ok) return;
+      const commit = await response.json();
+      const latestSha = commit &amp;&amp; commit.sha;
+      if (!latestSha) return;
+      if (latestSha === loadedCommitSha) return;
+      // If the initial commit lookup was unavailable, reload once the API works
+      // again so the next launch can establish a trustworthy version baseline.
+      const hud = document.getElementById('hud');
+      const inMatch = !!(hud &amp;&amp; hud.classList.contains('on'));
+      if (inMatch) {
+        if (latestSha !== updateAvailableSha) showUpdateAvailable(latestSha);
+      } else {
+        location.reload();
+      }
+    } catch (_) {
+      // A temporary GitHub/API failure should not interrupt a running game.
+    } finally {
+      checkingForUpdates = false;
+    }
+  }
+
+  $('retry').addEventListener('click', () =&gt; launch());
+  $('force').addEventListener('click', () =&gt; {
+    if (busy) return;
+    forceMode = true;
+    updateChecksDisabled = true;
+    launch();
+  });
+  launch();
+  // Rescan the branch every 5 minutes (was every minute, which alone used the
+  // whole 60/hour GitHub API allowance). A changed commit triggers a reload outside
+  // a match; during a match we show an update button so gameplay isn't interrupted.
+  setInterval(checkForUpdates, 300000);
+})();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" class="in"></iframe></body></html>
